@@ -8,8 +8,13 @@ namespace GuessTheNumber
         static void Main(string[] args)
         {
             var game = new Game();
-            var player = new HumanPlayer(game);
-            player.Play();
+            while (!game.IsSolved)
+            {
+                Console.Write("Tipp et tall: ");
+                var number = Convert.ToInt32(Console.ReadLine());
+                var feedback = game.Guess(number);
+                Console.WriteLine(feedback.ToString());
+            }
         }
     }
 }
