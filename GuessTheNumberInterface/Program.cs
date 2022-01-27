@@ -1,4 +1,5 @@
 ﻿using System;
+using GuessTheNumberInterface.DIP;
 
 namespace GuessTheNumberInterface
 {
@@ -6,6 +7,9 @@ namespace GuessTheNumberInterface
     {
         static void Main(string[] args)
         {
+            Program2.Run();
+            return;
+
             while (true)
             {
                 Console.Write("Vil du spille selv (j/n)? ");
