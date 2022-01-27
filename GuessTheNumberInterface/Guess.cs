@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using GuessTheNumberInterface;
-
-namespace GuessTheNumber
+﻿namespace GuessTheNumberInterface
 {
     class Guess
     {

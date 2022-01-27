@@ -1,19 +1,29 @@
 ﻿using System;
-using GuessTheNumberInterface;
 
-namespace GuessTheNumber
+namespace GuessTheNumberInterface
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var game = new Game();
-            while (!game.IsSolved)
+            while (true)
             {
-                Console.Write("Tipp et tall: ");
-                var number = Convert.ToInt32(Console.ReadLine());
-                var feedback = game.Guess(number);
-                Console.WriteLine(feedback.ToString());
+                Console.Write("Vil du spille selv (j/n)? ");
+                var answer = Console.ReadLine();
+                var game = new Game();
+                IPlayer player;
+                if (answer == "j")
+                {
+                    player = new HumanPlayer(game);
+                }
+                else
+                {
+                    player = new RobotPlayer(game);
+                }
+                while (!game.IsSolved)
+                {
+                    player.Guess();
+                }
             }
         }
     }
