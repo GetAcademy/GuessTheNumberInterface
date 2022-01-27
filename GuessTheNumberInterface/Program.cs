@@ -7,15 +7,15 @@ namespace GuessTheNumberInterface
     {
         static void Main(string[] args)
         {
-            Program2.Run();
-            return;
+            //Program2.Run();
+            //return;
 
             while (true)
             {
                 Console.Write("Vil du spille selv (j/n)? ");
                 var answer = Console.ReadLine();
                 var game = new Game();
-                IPlayer player;
+                Player player;
                 if (answer == "j")
                 {
                     player = new HumanPlayer(game);
